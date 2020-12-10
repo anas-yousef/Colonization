@@ -11,6 +11,7 @@ public class Shot : MonoBehaviour
 
     public EnergyBar _energyBar;
 
+    public SpaceShipMovement sp;
     
 
     void Update()
@@ -19,7 +20,7 @@ public class Shot : MonoBehaviour
         if (Input.GetButtonDown(shootKey))
         {
             //check if able to add shot
-            if (_energyBar.canShoot())
+            if (_energyBar.canShoot() && sp.enableMovement)
             {
                 // add shoot
                 _energyBar.AddShoot();

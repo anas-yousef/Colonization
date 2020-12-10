@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2eb76d73268a846897d1528f2fdf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletspeed: 5
+  bulletspeed: 200
   rb: {fileID: 6359604248117127510}
   timer: 3
   enemyTag: Spaceship2

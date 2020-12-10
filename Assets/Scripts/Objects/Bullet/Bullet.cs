@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletspeed = 0.5f;
+    public float bulletspeed = 20f;
     public Rigidbody2D rb;
     public float timer = 1f;
     public string enemyTag;
@@ -15,7 +15,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         // TODO add delta time 
-        rb.velocity = transform.right * bulletspeed;
+        // TODO need to add right to the other bullet
+        rb.AddForce(Vector3.left * bulletspeed);
     }
 
     private void Update()
@@ -35,7 +36,7 @@ public class Bullet : MonoBehaviour
         {
             
             Debug.Log("BOOM: the bullet hit the other player");
-            SpaceshipController enemy = hitInfo.GetComponent<SpaceshipController>();
+            SpaceShipMovement enemy = hitInfo.GetComponent<SpaceShipMovement>();
             if (enemy != null)
             {
                 enemy.Hit();
