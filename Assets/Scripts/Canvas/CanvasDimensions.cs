@@ -14,7 +14,7 @@ public class CanvasDimensions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xOffset = 3;
+        xOffset = 5.5f;
         rt = GetComponent<RectTransform>();
         cornerVectors = new Vector3[4];
         rt.GetWorldCorners(cornerVectors);

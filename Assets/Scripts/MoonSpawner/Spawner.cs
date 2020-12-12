@@ -16,21 +16,38 @@ public class Spawner : MonoBehaviour
         this.xPos = transform.position.x;
         this.yPos = transform.position.y;
         this.timer = 2f;
-        Invoke("SpawnMoons", this.timer);
+        Invoke("SpawnMoonsLayer1", this.timer);
+
+        Invoke("SpawnMoonsLayer2", this.timer);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
-    void SpawnMoons()
+    void SpawnMoonsLayer1()
     {
         Vector3 position = new Vector3(this.xPos, this.yPos, 0f);
-        Instantiate(this.moonPrefabs[0],
+
+        GameObject moon = Instantiate(this.moonPrefabs[0],
             position, Quaternion.identity);
 
-        Invoke("SpawnMoons", this.timer);
+        moon.AddComponent<MoonControllerLayer1>();
+
+        Invoke("SpawnMoonsLayer1", this.timer);
+    }
+
+    void SpawnMoonsLayer2()
+    {
+        Vector3 position = new Vector3(this.xPos, this.yPos, 0f);
+
+        GameObject moon = Instantiate(this.moonPrefabs[0],
+            position, Quaternion.identity);
+
+        moon.AddComponent<MoonControllerLayer2>();
+
+        Invoke("SpawnMoonsLayer2", this.timer);
     }
 }

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoonController : MonoBehaviour
+public class MoonControllerLayer1 : MonoBehaviour
 {
+    //public CircleCollider2D collider;
     public float speed;
-    private float timeCounter;
+    public float timeCounter;
     public float radius;
     private float initX;
     private float initY;
@@ -15,9 +16,9 @@ public class MoonController : MonoBehaviour
     { 
         this.initX = CanvasDimensions.originPosition.x;
         this.initY = CanvasDimensions.originPosition.y;
-        
+        //collider = GetComponent<CircleCollider2D>();
         CalculateRadius();
-        speed = 0.3f;
+        speed = 0.1f;
         this.timeCounter = 0f;
        
        
@@ -40,8 +41,15 @@ public class MoonController : MonoBehaviour
 
     void CalculateRadius()
     {
-        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 8f;
+        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 9.5f;
         float y = CanvasDimensions.cornerVectors[2].y;
         radius = Mathf.Sqrt(Mathf.Pow(this.initX - x, 2f) + Mathf.Pow(this.initY - y, 2f));
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Debug.Log("Stayed");
+    }
+
+
 }
