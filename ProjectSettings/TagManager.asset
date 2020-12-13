@@ -10,6 +10,7 @@ TagManager:
   - Shot
   - Spaceship1
   - Spaceship2
+  - PlanetBlue
   layers:
   - Default
   - TransparentFX

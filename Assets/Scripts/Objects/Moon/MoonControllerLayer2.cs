@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class MoonControllerLayer2 : MonoBehaviour
 {
-    public CircleCollider2D collider;
     public float speed;
     public float timeCounter;
     public float radius;
     private float initX;
     private float initY;
+    public int layer;
 
     // Start is called before the first frame update
     void Start()
     {
+        layer = 2;
         this.initX = CanvasDimensions.originPosition.x;
         this.initY = CanvasDimensions.originPosition.y;
-        collider = GetComponent<CircleCollider2D>();
         CalculateRadius();
         speed = 0.1f;
         this.timeCounter = 0f;

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 87762425}
   m_Layer: 0
   m_Name: PlanetBlue
-  m_TagString: Untagged
+  m_TagString: PlanetBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1000,10 +1000,6 @@ PrefabInstance:
     - target: {fileID: 815862347965684959, guid: 5efacff0826a705408ca9199a1d52038, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7603680259626274852, guid: 5efacff0826a705408ca9199a1d52038, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5efacff0826a705408ca9199a1d52038, type: 3}
