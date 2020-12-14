@@ -7,22 +7,35 @@ using UnityEngine.PlayerLoop;
 public class SpaceShipMovement : MonoBehaviour
 {
     public Rigidbody2D spaceShip;
-    public SpriteRenderer sapeShipImage;
+    public SpriteRenderer spaceShipImage;
     public String alienTag;
 
     private Vector2 startLocation;
     public bool enableMovement;
 
-    public float forwardMovementSpeed = 1f;
-    public float stopMovementSpeed = 1f;
-    public float sideMovementSpeed = 1f;
+    public float forwardMovementSpeed = 50f;
+    public float sideMovementSpeed = 50f;
+
+    private readonly string horizontal = "Horizontal";
+    private readonly string vertical = "Vertical";
+
+
+    // images
+    private Sprite spaceshipStaticSprite;
+    private Sprite spaceshipMoveSprite;
+
+    public String nameStaticImage;
+    public String nameMoveImage;
+
 
 
     void Start()
     {
         startLocation = spaceShip.position;
-        // TODO: should be initialized to false
-        enableMovement = false;
+        enableMovement = true;
+
+        spaceshipStaticSprite = Resources.Load(nameStaticImage, typeof(Sprite)) as Sprite;
+        spaceshipMoveSprite = Resources.Load(nameMoveImage, typeof(Sprite)) as Sprite;
     }
 
     void FixedUpdate()
@@ -30,35 +43,58 @@ public class SpaceShipMovement : MonoBehaviour
         // the space ship is enabled now
         if (enableMovement)
         {
-            if (Input.GetKey(KeyCode.DownArrow))
+
+            float posX = Input.GetAxisRaw(vertical);
+            float posY = Input.GetAxisRaw(horizontal);
+
+
+            if (posX != 0f && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
             {
-                spaceShip.velocity = Vector3.zero;
-                spaceShip.AddForce(Vector3.down * sideMovementSpeed);
+                spaceShip.AddForce(posX * Vector2.up * forwardMovementSpeed);
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (posY != 0f && Input.GetKey(KeyCode.LeftArrow))
             {
-                spaceShip.velocity = Vector3.zero;
-                spaceShip.AddForce(Vector3.up * sideMovementSpeed);
+                spaceShip.AddForce(posY * Vector2.right * sideMovementSpeed);
             }
 
-            // forward movement
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (posX == 0 && posY == 0)
             {
-                spaceShip.velocity = Vector3.zero;
-                spaceShip.AddForce(Vector3.left * forwardMovementSpeed);
-
-                // TODO change sprite to accelerate
+                spaceShip.velocity = Vector2.zero;
+                spaceShip.angularVelocity = 0f;
             }
 
-            // stop movement
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                spaceShip.velocity = Vector3.zero;
-                spaceShip.AddForce(-spaceShip.velocity.normalized * stopMovementSpeed);
 
-                // TODO change sprite to move
-            }
+            //if (Input.GetKey(KeyCode.DownArrow))
+            //{
+            //    //spaceShip.velocity = Vector3.zero;
+            //    spaceShip.AddForce(Vector3.down * sideMovementSpeed);
+
+            //    spaceShip.velocity = Vector3.zero;
+            //}
+
+            //else if (Input.GetKey(KeyCode.UpArrow))
+            //{
+            //    //spaceShip.velocity = Vector3.zero;
+            //    spaceShip.AddForce(Vector3.up * sideMovementSpeed);
+
+            //    spaceShip.velocity = Vector3.zero;
+            //}
+
+            //// forward movement
+            //else if (Input.GetKey(KeyCode.LeftArrow))
+            //{
+            //    //spaceShip.velocity = Vector3.zero;
+            //    spaceShip.AddForce(Vector3.left * forwardMovementSpeed);
+
+            //    spaceShipImage.sprite = spaceshipMoveSprite;
+            //}
+
+            //else
+            //{
+            //    spaceShipImage.sprite = spaceshipStaticSprite;
+            //    spaceShip.velocity = Vector3.zero;
+            //}
         }
     }
 

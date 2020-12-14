@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
         //Physics2D.IgnoreLayerCollision(10, 9);
         this.xPos = transform.position.x;
         this.yPos = transform.position.y;
-        this.timer = 2f;
+        this.timer = 4f;
         Invoke("SpawnMoonsLayer1", this.timer);
 
         Invoke("SpawnMoonsLayer2", this.timer);
