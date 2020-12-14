@@ -12,7 +12,7 @@ public class CanvasDimensions : MonoBehaviour
 
     private RectTransform rt;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         xOffset = 5.5f;
         rt = GetComponent<RectTransform>();

@@ -8,6 +8,7 @@ public class SpaceShipMovement : MonoBehaviour
 {
     public Rigidbody2D spaceShip;
     public SpriteRenderer sapeShipImage;
+    public String alienTag;
 
     private Vector2 startLocation;
     public bool enableMovement;
@@ -65,17 +66,17 @@ public class SpaceShipMovement : MonoBehaviour
     {
 
         // the collision was with the alien 
-        //if (other.gameObject.tag.Equals("Alien"))
-        //{
-        //    Debug.Log("Start flying the spacehsip!");
+        if (other.gameObject.tag.Equals("Alien"))
+        {
+            Debug.Log("Start flying the spacehsip!");
 
-        //    // kill the alien 
-        //    Destroy(other.gameObject);
+            // kill the alien 
+            Destroy(other);
 
-        //    // enable the movement
-        //    enableMovement = true;
+            // enable the movement
+            enableMovement = true;
 
-        //}
+        }
 
         // the collision was with other spaceship
         if (other.gameObject.tag.Equals("Spaceship"))
@@ -96,8 +97,8 @@ public class SpaceShipMovement : MonoBehaviour
         // TODO creat
         if (other.gameObject.tag.Equals("Planet"))
         {
-            Debug.Log("VICTORY!");
-            
+            Debug.Log("WICTORY!");
+
             // TODO change sprite to move
 
         }
@@ -112,7 +113,7 @@ public class SpaceShipMovement : MonoBehaviour
     {
         // recreate the alien 
         // TODO check if the location is correct 
-        // GameObject alien = Instantiate(Resources.Load("Alien")) as GameObject;
+        GameObject alien = Instantiate(Resources.Load(alienTag)) as GameObject;
 
         // reposition the spaceship
         spaceShip.velocity = Vector3.zero;

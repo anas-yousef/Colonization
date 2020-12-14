@@ -160,7 +160,7 @@ public class AlienController : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag.Equals("Spaceship"))
+        if (collision.gameObject.tag.Equals("Spaceship")) // Might make it Spaceship 1-2
         {
             canEnterShip = false;
             this.spaceship = null;
