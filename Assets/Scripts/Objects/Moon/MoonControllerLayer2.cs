@@ -10,6 +10,7 @@ public class MoonControllerLayer2 : MonoBehaviour
     private float initX;
     private float initY;
     public int layer;
+    //public float ratio;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class MoonControllerLayer2 : MonoBehaviour
 
     void CalculateRadius()
     {
-        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 5f;
+        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 5.9f;
         float y = CanvasDimensions.cornerVectors[2].y;
         radius = Mathf.Sqrt(Mathf.Pow(this.initX - x, 2f) + Mathf.Pow(this.initY - y, 2f));
     }
