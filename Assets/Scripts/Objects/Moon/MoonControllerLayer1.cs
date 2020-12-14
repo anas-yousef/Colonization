@@ -41,7 +41,7 @@ public class MoonControllerLayer1 : MonoBehaviour
 
     void CalculateRadius()
     {
-        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 9.5f;
+        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 3f;
         float y = CanvasDimensions.cornerVectors[2].y;
         radius = Mathf.Sqrt(Mathf.Pow(this.initX - x, 2f) + Mathf.Pow(this.initY - y, 2f));
     }
