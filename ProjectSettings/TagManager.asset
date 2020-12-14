@@ -11,6 +11,9 @@ TagManager:
   - Spaceship1
   - Spaceship2
   - PlanetBlue
+  - Alien1
+  - Alien
+  - Spaceship
   layers:
   - Default
   - TransparentFX

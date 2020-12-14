@@ -23,24 +23,24 @@ public class AsteroidsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        asteroidsNum = 4;
+        asteroidsNum = 4f;
         asteroidsDistance = CanvasDimensions.canvasHeight / asteroidsNum;
-        layersNum = 3;
+        layersNum = 3f;
         layersWidth = 0.125f * CanvasDimensions.canvasWidth;
         layersDistance = layersWidth / (layersNum - 1);
         asteroidsLinearSpeed = new float[3];
         asteroidAngularSpeed = new float[(int)layersNum, (int)(asteroidsNum + 1)];
-        initialYpos = -(asteroidsDistance + CanvasDimensions.canvasHeight) / 2;
+        initialYpos = -(asteroidsDistance + CanvasDimensions.canvasHeight) / 2f;
         scale = 0.15f;
-        asteroidSprite0 = Resources.Load("_steroid1", typeof(Sprite)) as Sprite;
-        asteroidSprite1 = Resources.Load("_steroid2", typeof(Sprite)) as Sprite;
-        asteroidSprite2 = Resources.Load("_steroid3", typeof(Sprite)) as Sprite;
+        asteroidSprite0 = Resources.Load("asteroid1", typeof(Sprite)) as Sprite;
+        asteroidSprite1 = Resources.Load("asteroid2", typeof(Sprite)) as Sprite;
+        asteroidSprite2 = Resources.Load("asteroid3", typeof(Sprite)) as Sprite;
         asteroidsSprites = new Sprite[] { asteroidSprite0, asteroidSprite1, asteroidSprite2 };
 
         // Creating a pool of asteroids.
         for (int xp = 0; xp < layersNum; ++xp)
         {
-            float xPos = -layersWidth / 2 + xp * layersDistance;
+            float xPos = -layersWidth / 2f + xp * layersDistance;
             asteroidsLinearSpeed[xp] = Mathf.Pow(-1, xp) * 2f / (Mathf.Abs(xPos) + 1);
             for (int a = 0; a < asteroidsNum + 1; ++a)
             {
@@ -98,9 +98,12 @@ public class AsteroidsScript : MonoBehaviour
             ast.transform.localEulerAngles = new Vector3(xr, yr, zr);
         }
 
-        if (Input.GetKeyDown("backspace"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
     }
 }
+
+
+
+//if (Input.GetKeyDown("backspace"))
+//{
+//    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+//}

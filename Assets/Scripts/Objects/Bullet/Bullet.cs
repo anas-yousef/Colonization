@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
         {
             
             Debug.Log("BOOM: the bullet hit the other player");
-            SpaceshipController enemy = hitInfo.GetComponent<SpaceshipController>();
+            SpaceShipMovement enemy = hitInfo.GetComponent<SpaceShipMovement>();
             if (enemy != null)
             {
                 enemy.Hit();
