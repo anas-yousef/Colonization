@@ -187,6 +187,12 @@ public class SpaceShipMovementEnemy : MonoBehaviour
         // TODO check if the location is correct 
         GameObject alien = Instantiate(Resources.Load(alienTag)) as GameObject;
 
+        //AlienController alien = GameObject.FindGameObjectWithTag("Alien2").GetComponent<AlienController>();
+        //if (alien != null)
+        //{
+        //    alien.Hit();
+        //}
+
         // reposition the spaceship
         spaceShip.position = startLocation;
         spaceShip.velocity = Vector2.zero;

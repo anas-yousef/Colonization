@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5050227561691229391}
   - component: {fileID: 1969487852683482000}
   m_Layer: 0
-  m_Name: AlienGreen 1
+  m_Name: AlienGreen
   m_TagString: Alien2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050227561691229376}
   m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
-  m_LocalPosition: {x: -9.21, y: -0, z: 0}
+  m_LocalPosition: {x: -8.5, y: -0, z: 0}
   m_LocalScale: {x: 2.5, y: -2.5, z: 0}
   m_Children:
   - {fileID: 5050227561968151482}
@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34414daa69d0e040a340bf7bbc34d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initX: 0
+  initY: 0
   canEnterShip: 0
   speed: 0
   canJump: 0

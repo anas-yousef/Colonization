@@ -57,10 +57,27 @@ public class Bullet : MonoBehaviour
         {
 
             Debug.Log("BOOM: the bullet hit the other player");
-            SpaceShipMovement enemy = hitInfo.GetComponent<SpaceShipMovement>();
-            if (enemy != null)
+            //SpaceShipMovement enemy = hitInfo.GetComponent<SpaceShipMovement>();
+            //if (enemy != null)
+            //{
+            //    enemy.Hit();
+            //}
+            
+            if (enemyTagAlien.Equals("Alien2"))
             {
-                enemy.Hit();
+                AlienEnemy enemy = hitInfo.gameObject.GetComponent<AlienEnemy>();
+                if (enemy != null)
+                {
+                    enemy.Hit();
+                }
+            }
+            if (enemyTagAlien.Equals("Alien1"))
+            {
+                AlienController enemy = hitInfo.gameObject.GetComponent<AlienController>();
+                if (enemy != null)
+                {
+                    enemy.Hit();
+                }
             }
 
             // destroy the bullet
@@ -72,23 +89,23 @@ public class Bullet : MonoBehaviour
 
             //GameObject alien = Instantiate(Resources.Load(enemyName)) as GameObject;
 
-            Debug.Log("BOOM: the bullet hit the other player");
-            if (enemyTagSpaceship.Equals("Spaceship2"))
-            {
-               AlienEnemy enemy = hitInfo.GetComponent<AlienEnemy>();
-                if (enemy != null)
-                {
-                    enemy.Hit();
-                }
-            }
-            if (enemyTagSpaceship.Equals("Spaceship1"))
-            {
-                AlienController enemy = hitInfo.GetComponent<AlienController>();
-                if (enemy != null)
-                {
-                    enemy.Hit();
-                }
-            }    
+            //Debug.Log("BOOM: the bullet hit the other player");
+            //if (enemyTagSpaceship.Equals("Spaceship2"))
+            //{
+            //   AlienEnemy enemy = hitInfo.GetComponent<AlienEnemy>();
+            //    if (enemy != null)
+            //    {
+            //        enemy.Hit();
+            //    }
+            //}
+            //if (enemyTagSpaceship.Equals("Spaceship1"))
+            //{
+            //    AlienController enemy = hitInfo.GetComponent<AlienController>();
+            //    if (enemy != null)
+            //    {
+            //        enemy.Hit();
+            //    }
+            //}    
             
             //if (enemy != null)
             //{

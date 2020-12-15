@@ -146,7 +146,7 @@ public class SpaceShipMovement : MonoBehaviour
         // the collision was with asteroid
         if (other.gameObject.tag.Equals("Asteroid"))
         {
-            Debug.Log("spaceship got hit by asteroid! restart");
+            Debug.Log("Spaceship got hit by Asteroid! restart");
 
             Hit();
         }
@@ -163,7 +163,7 @@ public class SpaceShipMovement : MonoBehaviour
 
         if (other.gameObject.tag.Equals("Shot"))
         {
-            Debug.Log("spaceship got hit by asteroid! restart");
+            Debug.Log("Spaceship got hit by Bullet! restart");
 
             Hit();
         }
@@ -186,6 +186,16 @@ public class SpaceShipMovement : MonoBehaviour
         // recreate the alien 
         // TODO check if the location is correct 
         GameObject alien = Instantiate(Resources.Load(alienTag)) as GameObject;
+
+        //AlienController alien = GameObject.FindGameObjectWithTag("Alien1").GetComponent<AlienController>();
+        //if (alien != null)
+        //{
+        //    alien.Hit();
+        //}
+        //if (alien == null)
+        //{
+        //    GameObject newAlien = Instantiate(Resources.Load(alienTag)) as GameObject;
+        //}
 
         // reposition the spaceship
         spaceShip.position = startLocation;

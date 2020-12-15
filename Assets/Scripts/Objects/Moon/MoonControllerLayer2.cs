@@ -19,7 +19,7 @@ public class MoonControllerLayer2 : MonoBehaviour
         this.initX = CanvasDimensions.originPosition.x;
         this.initY = CanvasDimensions.originPosition.y;
         CalculateRadius();
-        speed = 0.1f;
+        speed = 8f;
         this.timeCounter = 0f;
 
 
@@ -29,8 +29,8 @@ public class MoonControllerLayer2 : MonoBehaviour
     void Update()
     {
         this.timeCounter += Time.deltaTime * speed;
-        float x = this.initX + Mathf.Cos(-(this.timeCounter + 90)) * radius;
-        float y = this.initY + Mathf.Sin(-(this.timeCounter + 90)) * radius;
+        float x = this.initX + Mathf.Cos(Mathf.Deg2Rad*-(this.timeCounter + 135)) * radius;
+        float y = this.initY + Mathf.Sin(Mathf.Deg2Rad*-(this.timeCounter + 135)) * radius;
         transform.position = new Vector3(x, y, 0);
 
         if (y - 2 > CanvasDimensions.cornerVectors[1].y)
@@ -42,7 +42,7 @@ public class MoonControllerLayer2 : MonoBehaviour
 
     void CalculateRadius()
     {
-        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 5.9f;
+        float x = CanvasDimensions.cornerVectors[2].x - CanvasDimensions.canvasWidth / 6.9f;
         float y = CanvasDimensions.cornerVectors[2].y;
         radius = Mathf.Sqrt(Mathf.Pow(this.initX - x, 2f) + Mathf.Pow(this.initY - y, 2f));
     }

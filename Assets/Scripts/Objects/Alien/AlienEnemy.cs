@@ -25,8 +25,8 @@ public class AlienEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.moonCandidates = new List<GameObject>();
         speed = 5f;
+        this.moonCandidates = new List<GameObject>();      
         canJump = false;
         onMoon = false;
         canEnterShip = false;
@@ -192,6 +192,12 @@ public class AlienEnemy : MonoBehaviour
         Debug.Log("Hit the player, should restart");
         transform.position = new Vector3(initX, initY, 0f);
         transform.parent = null;
+        this.moonCandidates = new List<GameObject>();
+        canJump = false;
+        onMoon = false;
+        canEnterShip = false;
+        pressedForwarnMoon = false;
+        pressedForwarnShip = false;
 
     }
 }
