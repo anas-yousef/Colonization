@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public class ShotEnemy : MonoBehaviour
 {
     public Transform shot;
     public GameObject bullet;
@@ -11,7 +10,7 @@ public class Shot : MonoBehaviour
 
     public EnergyBar _energyBar;
 
-    public SpaceShipMovement sp;
+    public SpaceShipMovementEnemy sp;
 
 
     void Update()
@@ -37,5 +36,4 @@ public class Shot : MonoBehaviour
         Instantiate(bullet, shot.position, shot.rotation);
         SoundManagerScript.PlaySound("LaserShot");
     }
-
 }

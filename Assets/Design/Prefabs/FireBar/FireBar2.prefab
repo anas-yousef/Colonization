@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7467366101030779543
+--- !u!1 &8113051726717887756
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,64 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7467366101030779544}
-  - component: {fileID: 7467366101030779545}
-  m_Layer: 5
-  m_Name: FireBar1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7467366101030779544
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101030779543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7467366101699881073}
-  - {fileID: 7467366101692691129}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -267.78, y: 185.21}
-  m_SizeDelta: {x: 120.38565, y: 20.205208}
-  m_Pivot: {x: 0.764673, y: 0.5}
---- !u!114 &7467366101030779545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101030779543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e03c0d4e387f94eaaa63768766ba15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startEnergy: 1
-  decreaseEachShoot: 0.2
-  addEachSecond: 0.003
-  stopShootingUnder: 0.1
-  startShootingAbove: 0.9
---- !u!1 &7467366101692691128
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7467366101692691129}
-  - component: {fileID: 7467366101692691131}
-  - component: {fileID: 7467366101692691130}
+  - component: {fileID: 8113051726717887757}
+  - component: {fileID: 8113051726717887759}
+  - component: {fileID: 8113051726717887758}
   m_Layer: 5
   m_Name: Bar
   m_TagString: UI
@@ -73,40 +18,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7467366101692691129
+--- !u!224 &8113051726717887757
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101692691128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 8113051726717887756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7467366101030779544}
+  m_Father: {fileID: 8113051728472419628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.33000565, y: -1.3199854}
+  m_AnchoredPosition: {x: -0.33000565, y: -1.3200012}
   m_SizeDelta: {x: 119.39264, y: 21.810066}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7467366101692691131
+--- !u!222 &8113051726717887759
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101692691128}
+  m_GameObject: {fileID: 8113051726717887756}
   m_CullTransparentMesh: 0
---- !u!114 &7467366101692691130
+--- !u!114 &8113051726717887758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101692691128}
+  m_GameObject: {fileID: 8113051726717887756}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -120,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6af8e1691066643e1a61a64252f66dbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc2347bcea6a5436dbd24c096b1a5373, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -130,7 +75,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &7467366101699881072
+--- !u!1 &8113051726725087172
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +83,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7467366101699881073}
-  - component: {fileID: 7467366101699881074}
+  - component: {fileID: 8113051726725087173}
+  - component: {fileID: 8113051726725087174}
   m_Layer: 0
   m_Name: 'Frame '
   m_TagString: Untagged
@@ -147,27 +92,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7467366101699881073
+--- !u!4 &8113051726725087173
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101699881072}
+  m_GameObject: {fileID: 8113051726725087172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -32.4, y: -0.5, z: 0}
   m_LocalScale: {x: 99.38743, y: 117.48621, z: 107.399994}
   m_Children: []
-  m_Father: {fileID: 7467366101030779544}
+  m_Father: {fileID: 8113051728472419628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7467366101699881074
+--- !u!212 &8113051726725087174
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467366101699881072}
+  m_GameObject: {fileID: 8113051726725087172}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -200,8 +145,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7408862c112de486eb7138400ce8d407, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b810b6fe3a2394eab83447e78683c386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,6 +154,61 @@ SpriteRenderer:
   m_Size: {x: 1.2, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8113051728472419619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8113051728472419628}
+  - component: {fileID: 8113051728472419629}
+  m_Layer: 5
+  m_Name: FireBar2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8113051728472419628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8113051728472419619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8113051726725087173}
+  - {fileID: 8113051726717887757}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -307.1, y: 183.7}
+  m_SizeDelta: {x: 120.38565, y: 20.205208}
+  m_Pivot: {x: 0.764673, y: 0.5}
+--- !u!114 &8113051728472419629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8113051728472419619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e03c0d4e387f94eaaa63768766ba15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEnergy: 1
+  decreaseEachShoot: 0.2
+  addEachSecond: 0.003
+  stopShootingUnder: 0.1
+  startShootingAbove: 0.9

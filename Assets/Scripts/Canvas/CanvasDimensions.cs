@@ -8,6 +8,7 @@ public class CanvasDimensions : MonoBehaviour
     public static float canvasWidth;
     public static Vector3[] cornerVectors;
     public static Vector2 originPosition;
+    public static Vector2 originPositionEnemy;
     public float xOffset;
 
     private RectTransform rt;
@@ -33,6 +34,7 @@ public class CanvasDimensions : MonoBehaviour
     void PositionRadius()
     {
         originPosition = new Vector2(cornerVectors[2].x + xOffset, cornerVectors[3].y + canvasHeight/2);
+        originPositionEnemy = new Vector2(cornerVectors[1].x - xOffset, cornerVectors[3].y + canvasHeight/2);
     }
 
 

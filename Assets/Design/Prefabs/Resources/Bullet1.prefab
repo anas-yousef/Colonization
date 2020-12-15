@@ -137,4 +137,5 @@ MonoBehaviour:
   bulletspeed: 5
   rb: {fileID: 6359604248117127510}
   timer: 3
-  enemyTag: Spaceship2
+  enemyTagAlien: Alien2
+  enemyTagSpaceship: Spaceship2

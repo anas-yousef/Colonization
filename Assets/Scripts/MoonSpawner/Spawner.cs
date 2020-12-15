@@ -31,10 +31,14 @@ public class Spawner : MonoBehaviour
     {
         Vector3 position = new Vector3(this.xPos, this.yPos, 0f);
 
-        GameObject moon = Instantiate(this.moonPrefabs[0],
+        GameObject moon1 = Instantiate(this.moonPrefabs[0],
             position, Quaternion.identity);
 
-        moon.AddComponent<MoonControllerLayer1>();
+        GameObject moon2 = Instantiate(this.moonPrefabs[1],
+            position, Quaternion.identity);
+
+        moon1.AddComponent<MoonControllerLayer1>();
+        moon2.AddComponent<MoonEnemy1>();
 
         Invoke("SpawnMoonsLayer1", this.timer);
     }
@@ -43,10 +47,14 @@ public class Spawner : MonoBehaviour
     {
         Vector3 position = new Vector3(this.xPos, this.yPos, 0f);
 
-        GameObject moon = Instantiate(this.moonPrefabs[0],
+        GameObject moon1 = Instantiate(this.moonPrefabs[0],
             position, Quaternion.identity);
 
-        moon.AddComponent<MoonControllerLayer2>();
+        GameObject moon2 = Instantiate(this.moonPrefabs[1],
+            position, Quaternion.identity);
+
+        moon1.AddComponent<MoonControllerLayer2>();
+        moon2.AddComponent<MoonEnemy2>();
 
         Invoke("SpawnMoonsLayer2", this.timer);
     }

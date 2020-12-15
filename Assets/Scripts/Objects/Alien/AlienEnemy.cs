@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienController : MonoBehaviour
+public class AlienEnemy : MonoBehaviour
 {
-    private List<GameObject> moonCandidates; 
+    private List<GameObject> moonCandidates;
     private GameObject moonToLandOn;
     private GameObject currentMoon;
     private GameObject arrow;
@@ -20,7 +20,7 @@ public class AlienController : MonoBehaviour
     public bool pressedForwarnShip;
     public bool onMoon;
     public bool moveBackward;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class AlienController : MonoBehaviour
         pressedForwarnMoon = false;
         pressedForwarnShip = false;
         arrow = transform.GetChild(1).GetChild(0).gameObject;
-        
+
         this.initX = transform.position.x;
         this.initY = transform.position.y;
         //this.initialPos = new Vector3(transform.position.x, transform.position.y, 0f);
@@ -51,10 +51,10 @@ public class AlienController : MonoBehaviour
         }
 
         Vector3 scale = transform.localScale;
-        if (Input.GetKeyDown(KeyCode.RightShift))
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             transform.localScale = new Vector3(scale.x, -scale.y, scale.z);
-            //transform.eulerAngles += new Vector3(0f, 0f, 180f); // TODO Change to negative scale (Y)
         }
 
 
@@ -63,19 +63,19 @@ public class AlienController : MonoBehaviour
         //    this.GoToInitialPos();
         //}
 
-        if (canJump && ((Input.GetKeyDown(KeyCode.LeftArrow) && scale.y > 0f) || (Input.GetKeyDown(KeyCode.RightArrow) && scale.y < 0f)))
+        if (canJump && ((Input.GetKeyDown(KeyCode.A) && scale.y > 0f) || (Input.GetKeyDown(KeyCode.D) && scale.y < 0f)))
         {
 
-                // Confirm candidate here
+            // Confirm candidate here
             if (pressedForwarnMoon == false && this.moonCandidates.Count != 0)
             {
                 moonToLandOn = this.ReturnClosest(transform.position);
                 pressedForwarnMoon = true;
             }
-            
+
         }
 
-        if (canEnterShip && (Input.GetKeyDown(KeyCode.LeftArrow) && scale.y > 0f))
+        if (canEnterShip && (Input.GetKeyDown(KeyCode.D) && scale.y < 0f))
         {
             pressedForwarnShip = true;
         }
@@ -83,9 +83,9 @@ public class AlienController : MonoBehaviour
 
         if (pressedForwarnMoon)
         {
-        
+
             this.MoveForward();
-          
+
         }
 
         if (pressedForwarnShip)
@@ -104,12 +104,12 @@ public class AlienController : MonoBehaviour
         transform.position = Vector3.MoveTowards(pos, Vector3.Lerp(pos, targetPos, 5f), speed * Time.deltaTime);
         if ((transform.position - targetPos).magnitude == 0f)
         {
-            spaceship.GetComponent<SpaceShipMovement>().enableMovement = true;
+            spaceship.GetComponent<SpaceShipMovementEnemy>().enableMovement = true;
             Destroy(gameObject);
         }
     }
 
-   
+
 
     private void MoveForward()
     {
@@ -143,7 +143,7 @@ public class AlienController : MonoBehaviour
             arrow.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        if(collision.gameObject.tag.Equals("Spaceship1"))
+        if (collision.gameObject.tag.Equals("Spaceship2"))
         {
             this.spaceship = collision.gameObject;
             canEnterShip = true;
@@ -167,7 +167,7 @@ public class AlienController : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag.Equals("Spaceship1")) // Might make it Spaceship 1-2
+        if (collision.gameObject.tag.Equals("Spaceship2")) // Might make it Spaceship 1-2
         {
             canEnterShip = false;
             this.spaceship = null;
@@ -194,22 +194,8 @@ public class AlienController : MonoBehaviour
     public void Hit()
     {
         Debug.Log("Hit the player, should restart");
-        // Need to respawn
         transform.position = new Vector3(initX, initY, 0f);
         transform.parent = null;
 
     }
-
-    //private void GoToInitialPos()
-    //{
-    //    transform.parent = null;
-    //    //moveBackward = true;
-    //    Vector3 pos = transform.position;
-    //    transform.position = Vector3.MoveTowards(pos, Vector3.Lerp(pos, this.initialPos, 25f), speed * Time.deltaTime);
-    //    if ((transform.position - this.initialPos).magnitude == 0f)
-    //    {
-    //        goHome = false;
-    //        transform.eulerAngles = new Vector3(0f, 0f, 90f);
-    //    }
-    //}
 }

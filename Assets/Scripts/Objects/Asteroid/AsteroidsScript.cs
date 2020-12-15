@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AsteroidsScript : MonoBehaviour
 {
@@ -42,9 +43,21 @@ public class AsteroidsScript : MonoBehaviour
     private Sprite astSprt24;
     private Sprite[] asteroidsSprites;
 
+    private GameObject toMainMenu; // Added in class.
+    private float timeCnt; // Added in class.
+
+    public GameObject won1;
+    public GameObject won2;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        toMainMenu = GameObject.Find("BackSpaceToMenu");
+        won1 = GameObject.Find("P1Win");
+        won2 = GameObject.Find("P2Win");
+
+
         asteroidsNum = 4f;
         asteroidsDistance = CanvasDimensions.canvasHeight / asteroidsNum;
         layersNum = 3f;
@@ -107,11 +120,20 @@ public class AsteroidsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        timeCnt += Time.deltaTime;
+        if (timeCnt > 3)
+        {
+            toMainMenu.GetComponent<Text>().enabled = false; // Added.
+        }
+
         // Updating the asteroids position.
 
         if (Input.GetKeyDown("backspace"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            won1.gameObject.SetActive(false);
+            won2.gameObject.SetActive(false);
         }
 
         for (int i = 0; i < asteroids.Length; ++i)

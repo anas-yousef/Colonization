@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SpaceShipMovement : MonoBehaviour
+public class SpaceShipMovementEnemy : MonoBehaviour
 {
     public Rigidbody2D spaceShip;
     public SpriteRenderer spaceShipImage;
@@ -15,8 +15,8 @@ public class SpaceShipMovement : MonoBehaviour
     private Vector2 startLocation;
     public bool enableMovement;
 
-    public float forwardMovementSpeed = 50f;
-    public float sideMovementSpeed = 50f;
+    public float forwardMovementSpeed = 10f;
+    public float sideMovementSpeed = 10f;
 
     private readonly string horizontal = "Horizontal";
     private readonly string vertical = "Vertical";
@@ -44,6 +44,7 @@ public class SpaceShipMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
         // the space ship is enabled now
         if (enableMovement)
         {
@@ -64,12 +65,12 @@ public class SpaceShipMovement : MonoBehaviour
             }
 
 
-            if (posX != 0f && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
+            if (posX != 0f && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)))
             {
                 spaceShip.AddForce(posX * Vector2.up * forwardMovementSpeed);
             }
 
-            if (posY != 0f && Input.GetKey(KeyCode.LeftArrow))
+            if (posY != 0f && Input.GetKey(KeyCode.D))
             {
                 spaceShip.AddForce(posY * Vector2.right * sideMovementSpeed);
             }
@@ -156,8 +157,8 @@ public class SpaceShipMovement : MonoBehaviour
         {
             Debug.Log("VICTORY!");
 
+            SceneManager.LoadScene(3);
             // TODO change sprite to move
-            SceneManager.LoadScene(2);
 
         }
 
@@ -191,4 +192,3 @@ public class SpaceShipMovement : MonoBehaviour
     }
 
 }
-
