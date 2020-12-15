@@ -137,9 +137,9 @@ public class SpaceShipMovementEnemy : MonoBehaviour
         }
 
         // the collision was with other spaceship
-        if (other.gameObject.tag.Equals("Spaceship"))
+        if (other.gameObject.tag.Equals("Spaceship1"))
         {
-            Debug.Log("spaceships collide! restart both");
+            Debug.Log("Spaceships collide! restart both");
 
             Hit();
         }
@@ -169,6 +169,12 @@ public class SpaceShipMovementEnemy : MonoBehaviour
             Hit();
         }
 
+        if (other.gameObject.tag.Equals("Moon"))
+        {
+            Debug.Log("Spaceship got hit by Moon! restart");
+
+            Hit();
+        }
 
     }
 

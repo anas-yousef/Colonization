@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public float timer = 1f;
     public string enemyTagAlien;
     public string enemyTagSpaceship;
+    public string enemyName;
     public int dir;
 
 
@@ -69,12 +70,30 @@ public class Bullet : MonoBehaviour
         if (hitInfo.gameObject.tag.Equals(enemyTagSpaceship) && gameObject)
         {
 
+            //GameObject alien = Instantiate(Resources.Load(enemyName)) as GameObject;
+
             Debug.Log("BOOM: the bullet hit the other player");
-            AlienController enemy = hitInfo.GetComponent<AlienController>();
-            if (enemy != null)
+            if (enemyTagSpaceship.Equals("Spaceship2"))
             {
-                enemy.Hit();
+               AlienEnemy enemy = hitInfo.GetComponent<AlienEnemy>();
+                if (enemy != null)
+                {
+                    enemy.Hit();
+                }
             }
+            if (enemyTagSpaceship.Equals("Spaceship1"))
+            {
+                AlienController enemy = hitInfo.GetComponent<AlienController>();
+                if (enemy != null)
+                {
+                    enemy.Hit();
+                }
+            }    
+            
+            //if (enemy != null)
+            //{
+            //    enemy.Hit();
+            //}
 
             // destroy the bullet
             Destroy(gameObject);

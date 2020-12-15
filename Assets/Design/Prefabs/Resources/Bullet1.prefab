@@ -139,3 +139,4 @@ MonoBehaviour:
   timer: 3
   enemyTagAlien: Alien2
   enemyTagSpaceship: Spaceship2
+  dir: 0

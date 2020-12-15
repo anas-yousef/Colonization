@@ -149,10 +149,6 @@ public class AlienEnemy : MonoBehaviour
             canEnterShip = true;
             arrow.GetComponent<SpriteRenderer>().color = Color.green;
         }
-        //else if (collision.gameObject.tag.Equals("PlanetBlue"))
-        //{
-        //    goHome = true;
-        //}
     }
 
     void OnTriggerExit2D(Collider2D collision)
