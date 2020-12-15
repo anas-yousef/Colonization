@@ -122,7 +122,7 @@ public class AsteroidsScript : MonoBehaviour
     {
 
         timeCnt += Time.deltaTime;
-        if (timeCnt > 3)
+        if (timeCnt > 10)
         {
             toMainMenu.GetComponent<Text>().enabled = false; // Added.
         }
@@ -131,9 +131,7 @@ public class AsteroidsScript : MonoBehaviour
 
         if (Input.GetKeyDown("backspace"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            won1.gameObject.SetActive(false);
-            won2.gameObject.SetActive(false);
+            SceneManager.LoadScene(0);
         }
 
         for (int i = 0; i < asteroids.Length; ++i)
